@@ -11,7 +11,7 @@ function Jobs() {
   function addFilter(filter: string) {
     if (filter && !filters.includes(filter)) {
       setFilters([...filters, filter]);
-      setAllJobs()
+      setAllJobs(allJobs.filter((f) => f.languages.includes(filter)))
     }
   }
 
@@ -19,11 +19,13 @@ function Jobs() {
 function removeFilter(filter: string) {
   if (filter) {
     setFilters(filters.filter((f) => f !== filter));
+    setAllJobs(jobs);
   }
 }
 
 function clearAllFilters(){
   setFilters([]);
+  setAllJobs(jobs);
 }
 
   const divStyle = {
