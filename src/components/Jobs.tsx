@@ -75,12 +75,15 @@ function clearAllFilters(){
         {allJobs.map((job) => (
           <div
             key={job.id}
-            className="flex justify-between items-center mb-4 bg-white p-2 shadow-lg rounded-md border-l-4 border-blue-400"
-          >
-            <div className="flex space-x-6">
-              <img src={job.logo} alt={job.company} />
+            className="flex flex-col justify-start mb-10 lg:flex lg:justify-between lg:items-center lg:mb-4 bg-white p-2 shadow-lg rounded-md border-l-4 border-blue-400">
+            <div className="flex flex-col space-x-6 py-2 lg:flex lg:flex-row">
+              <img 
+              src={job.logo} 
+              alt={job.company}
+              className="w-16 h-16 -mt-12"
+               />
               <div className="flex flex-col space-y-2">
-                <div className="flex justify-between items-center space-x-3">
+                <div className="flex justify-start mt-2  lg:flex lg:justify-between items-center space-x-3">
                   <span className="text-[#26A69A] font-bold">
                     {job.company}
                   </span>
@@ -95,14 +98,15 @@ function clearAllFilters(){
                 <div className="text-[#26A69A] font-semibold">
                   {job.position}
                 </div>
-                <div className="flex justify-between items-center text-gray-500">
+                <div className="flex justify-start space-x-2 lg:flex lg:justify-between items-center text-gray-500">
                   <span>{job.postedAt}</span>.<span>{job.contract}</span>.
                   <span>{job.location ? job.location : ""}</span>
                 </div>
               </div>
             </div>
             {/* filters */}
-            <div>
+            <hr className="flex my-2 text-gray-400 lg:none" />
+            <div className="flex mt-4 lg:mt-0">
               {job.languages.map((lang) => (
                 <button
                   onClick={() => addFilter(lang)}
