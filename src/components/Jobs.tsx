@@ -75,12 +75,12 @@ function clearAllFilters(){
         {allJobs.map((job) => (
           <div
             key={job.id}
-            className="flex flex-col justify-start mb-10 lg:flex lg:justify-between lg:items-center lg:mb-4 bg-white p-2 shadow-lg rounded-md border-l-4 border-blue-400">
+            className="flex flex-col mb-10 lg:flex lg:justify-between lg:items-center lg:mb-4 lg:flex-row bg-white p-2 shadow-lg rounded-md border-l-4 border-blue-400">
             <div className="flex flex-col space-x-6 py-2 lg:flex lg:flex-row">
               <img 
               src={job.logo} 
               alt={job.company}
-              className="w-16 h-16 -mt-12"
+              className="w-16 h-16 -mt-12 lg:w-auto lg:-mt-0"
                />
               <div className="flex flex-col space-y-2">
                 <div className="flex justify-start mt-2  lg:flex lg:justify-between items-center space-x-3">
